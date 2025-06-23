@@ -32,11 +32,5 @@ distdir:
 
 install: all
 	mkdir -p $(PSPDIR)/include/bulletml $(PSPDIR)/lib
-	mkdir -p $(PSPDIR)/include/boost/config
-	mkdir -p $(PSPDIR)/include/boost/config/stdlib
-	mkdir -p $(PSPDIR)/include/boost/config/compiler
-	mkdir -p $(PSPDIR)/include/boost/config/platform
-	mkdir -p $(PSPDIR)/include/boost/detail
 	cp bulletml*.h formula.h tree.h tinyxml/tinyxml.h $(PSPDIR)/include/bulletml
-	find boost -name *.hpp -exec cp -R {} $(PSPDIR)/include/{} \;
 	cp libbulletml.a $(PSPDIR)/lib

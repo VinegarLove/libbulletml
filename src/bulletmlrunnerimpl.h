@@ -6,7 +6,6 @@
 #include <vector>
 #include <memory>
 #include <stack>
-#include <boost/smart_ptr.hpp>
 
 class BulletMLRunner;
 class BulletMLState;
@@ -38,7 +37,7 @@ protected:
 	bool isValidate_;
 };
 
-/// xy‚Ì‰Šú’lEI’l‚©‚ç”CˆÓ‚Ìx‚É‘Î‚·‚éy‚ÌüŒ`•âŠÔ‚ğ“¾‚éƒNƒ‰ƒX
+/// xyï¿½Ìï¿½ï¿½ï¿½ï¿½lï¿½Eï¿½Iï¿½lï¿½ï¿½ï¿½ï¿½Cï¿½Ó‚ï¿½xï¿½É‘Î‚ï¿½ï¿½ï¿½yï¿½Ìï¿½ï¿½`ï¿½ï¿½Ô‚ğ“¾‚ï¿½Nï¿½ï¿½ï¿½X
 template <class X_ = float, class Y_ = float>
 class LinearFunc {
 public:
@@ -70,37 +69,37 @@ public:
     explicit BulletMLRunnerImpl(BulletMLState* state, BulletMLRunner* runner);
     virtual ~BulletMLRunnerImpl();
 
-	/// Às‚·‚é
+	/// ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½
     void run();
 
 public:
-	/// Às‚ªI—¹‚µ‚Ä‚¢‚é‚©‚Ç‚¤‚©
+	/// ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚©ï¿½Ç‚ï¿½ï¿½ï¿½
 	bool isEnd() const {
 		return end_;
 	}
 
 public:
-    /// ’e‚Ì•ûŒü•ÏX‚ğ“o˜^‚µA©‘O‚ÅŠeƒ^[ƒ“•ÏX‚·‚é
+    /// ï¿½eï¿½Ì•ï¿½ï¿½ï¿½ï¿½ÏXï¿½ï¿½oï¿½^ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Oï¿½ÅŠeï¿½^ï¿½[ï¿½ï¿½ï¿½ÏXï¿½ï¿½ï¿½ï¿½
 	virtual void calcChangeDirection(float direction, int term, bool seq);
-    /// ’e‚Ì‘¬“x•ÏX‚ğ“o˜^‚µA©‘O‚ÅŠeƒ^[ƒ“•ÏX‚·‚é
+    /// ï¿½eï¿½Ì‘ï¿½ï¿½xï¿½ÏXï¿½ï¿½oï¿½^ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Oï¿½ÅŠeï¿½^ï¿½[ï¿½ï¿½ï¿½ÏXï¿½ï¿½ï¿½ï¿½
 	virtual void calcChangeSpeed(float speed, int term);
-    /// ’e‚Ì‰Á‘¬‚ğ“o˜^‚µA©‘O‚ÅŠeƒ^[ƒ“•ÏX‚·‚é
+    /// ï¿½eï¿½Ì‰ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½^ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Oï¿½ÅŠeï¿½^ï¿½[ï¿½ï¿½ï¿½ÏXï¿½ï¿½ï¿½ï¿½
 	/**
-	 * @todo horizontal, vertical ‚Ì type ‚Í–¢À‘•‚Å‚·B
+	 * @todo horizontal, vertical ï¿½ï¿½ type ï¿½Í–ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½B
 	 */
 	virtual void calcAccelX(float vertical, int term,
 							BulletMLNode::Type type);
-    /// ’e‚Ì‰Á‘¬‚ğ“o˜^‚µA©‘O‚ÅŠeƒ^[ƒ“•ÏX‚·‚é
+    /// ï¿½eï¿½Ì‰ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½^ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Oï¿½ÅŠeï¿½^ï¿½[ï¿½ï¿½ï¿½ÏXï¿½ï¿½ï¿½ï¿½
 	/**
-	 * @todo horizontal, vertical ‚Ì type ‚Í–¢À‘•‚Å‚·B
+	 * @todo horizontal, vertical ï¿½ï¿½ type ï¿½Í–ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½B
 	 */
 	virtual void calcAccelY(float horizontal, int term,
 							BulletMLNode::Type type);
 
 protected:
 	/**
-	 * –{“–‚É‹““®‚ª‹C‚É“ü‚ç‚È‚¢ê‡‚Í‰¼‘zŠÖ”‰»‚µ‚ÄA
-	 * ‚±‚ê‚ç‚ÌƒI[ƒo[ƒ‰ƒCƒh‚àl‚¦‚Ä‚­‚¾‚³‚¢B
+	 * ï¿½{ï¿½ï¿½ï¿½É‹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Cï¿½É“ï¿½ï¿½ï¿½È‚ï¿½ï¿½ê‡ï¿½Í‰ï¿½ï¿½zï¿½Öï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÄA
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ÌƒIï¿½[ï¿½oï¿½[ï¿½ï¿½ï¿½Cï¿½hï¿½ï¿½ï¿½lï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
 	 */
 	//@{
     void runBullet();
@@ -140,16 +139,16 @@ private:
 
 private:
 private:
-    std::auto_ptr<LinearFunc<int, float> > changeDir_;
-    std::auto_ptr<LinearFunc<int, float> > changeSpeed_;
-    std::auto_ptr<LinearFunc<int, float> > accelx_;
-    std::auto_ptr<LinearFunc<int, float> > accely_;
+    std::unique_ptr<LinearFunc<int, float> > changeDir_;
+    std::unique_ptr<LinearFunc<int, float> > changeSpeed_;
+    std::unique_ptr<LinearFunc<int, float> > accelx_;
+    std::unique_ptr<LinearFunc<int, float> > accely_;
 
 protected:
     Validatable<float> spd_, dir_, prevSpd_, prevDir_;
 
     typedef BulletMLParameter Parameters;
-    boost::shared_ptr<Parameters> parameters_;
+    std::shared_ptr<Parameters> parameters_;
 
 protected:
     BulletMLParser* bulletml_;
@@ -171,7 +170,7 @@ protected:
     typedef std::stack<RepeatElem*> RepeatStack;
     RepeatStack repeatStack_;
     typedef std::stack<std::pair<BulletMLNode*,
-								 boost::shared_ptr<Parameters> > > RefStack;
+								 std::shared_ptr<Parameters> > > RefStack;
     RefStack refStack_;
 
     typedef void (BulletMLRunnerImpl::*Method)();

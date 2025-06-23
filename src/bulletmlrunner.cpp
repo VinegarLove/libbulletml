@@ -11,7 +11,7 @@ BulletMLRunner::BulletMLRunner(BulletMLParser* bulletml) {
 		act.push_back(acts[i]);
 		BulletMLState* state =
 			new BulletMLState(bulletml, act,
-							  boost::shared_ptr<BulletMLParameter>());
+							  std::shared_ptr<BulletMLParameter>());
 		impl_.push_back(makeImpl(state));
 	}
 }
@@ -27,24 +27,14 @@ BulletMLRunner::~BulletMLRunner() {
 }
 
 void BulletMLRunner::run() {
-/*
-	std::for_each(impl_.begin(), impl_.end(),
-				  std::mem_fun(&BulletMLRunnerImpl::run));
-*/
 	for (std::vector<BulletMLRunnerImpl*>::const_iterator ite = impl_.begin();
 		ite != impl_.end(); ++ite)
 	{
-			(*ite)->run();
+		(*ite)->run();
 	}
 }
 
 bool BulletMLRunner::isEnd() const {
-/*
-	return
-		std::find_if(impl_.begin(), impl_.end(),
-					 std::not1(std::mem_fun(&BulletMLRunnerImpl::isEnd)))
-		== impl_.end();
-*/
 	for (std::vector<BulletMLRunnerImpl*>::const_iterator ite = impl_.begin();
 		ite != impl_.end(); ++ite)
 	{

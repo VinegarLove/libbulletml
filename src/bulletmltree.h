@@ -1,6 +1,6 @@
-/// BulletMLƒcƒŠ[B
+/// BulletMLï¿½cï¿½ï¿½ï¿½[ï¿½B
 /**
- * BulletML ‚É“Á‰»‚µ‚Ä‚¢‚Ä”ñí‚É‚¢‚ñ‚¿‚«‚­‚³‚¢‚Ì‚ª“Á’¥B
+ * BulletML ï¿½É“ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Ä”ï¿½ï¿½É‚ï¿½ï¿½ñ‚¿‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
  */
 
 #ifndef BULLETMLTREE_H_
@@ -59,7 +59,7 @@ public:
 
 
 
-    /// Žq‘·‚Ì’†‚ÉŽw’è‚µ‚½–¼‘O‚Éˆê’v‚·‚é‚à‚Ì‚ª‚ ‚é‚©‚Ç‚¤‚©
+    /// ï¿½qï¿½ï¿½ï¿½Ì’ï¿½ï¿½ÉŽwï¿½è‚µï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½Éˆï¿½vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ï¿½ï¿½é‚©ï¿½Ç‚ï¿½ï¿½ï¿½
     DECLSPEC bool findNode(Name name) const;
 
     DECLSPEC BulletMLNode* next();
@@ -70,7 +70,7 @@ protected:
     Name name_;
 	Type type_;
 	int refID_;
-    std::auto_ptr<Number> val_;
+    std::unique_ptr<Number> val_;
 };
 
 

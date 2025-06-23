@@ -8,10 +8,16 @@
 #endif
 
 #ifndef __EXCEPTIONS
-#include <boost/throw_exception.hpp>
-
-inline void boost::throw_exception(std::exception const &) {}
+#include <exception>
+inline void throw_exception(std::exception const &) {
+    // Do nothing or implement custom error handling/logging here
+}
+#else
+// If exceptions are enabled, use the regular throw
+template <typename E>
+[[noreturn]] inline void throw_exception(E const& e) {
+    throw e;
+}
 #endif
 
 #endif // ! bulletmlcommon_h_
-
