@@ -11,7 +11,7 @@
 #include "bulletmlcommon.h"
 #include "bulletmlparser.h"
 
-#ifdef defined(__PSP__) || defined(__PS2__)
+#if defined(__PSP__) || defined(__PS2__)
 #include "tinyxml.h"
 #else
 #include "tinyxml/tinyxml.h"

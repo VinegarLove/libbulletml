@@ -69,7 +69,7 @@ endif()
 # Find all bulletml*.h headers
 file(GLOB BULLETML_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/bulletml*.h")
 
-# Add specific headers that don’t match the pattern
+# Add specific headers that don't match the pattern
 set(OTHER_HEADERS
   formula.h
   tree.h
