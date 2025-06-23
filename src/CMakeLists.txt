@@ -61,9 +61,9 @@ add_library(bulletml STATIC
 
 # Installation directories
 if(DEFINED ENV{PS2DEV})
-    set(CMAKE_INSTALL_PREFIX "${CMAKE_TARGET_INSTALL_PREFIX}/")
+    set(CMAKE_INSTALL_PREFIX "$ENV{PS2SDK}/ports/")
 else()
-    set(CMAKE_INSTALL_PREFIX "$PSPDIR/")
+    set(CMAKE_INSTALL_PREFIX "$ENV{PSPDIR}/")
 endif()
 
 # Find all bulletml*.h headers

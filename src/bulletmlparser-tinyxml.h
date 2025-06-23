@@ -1,6 +1,6 @@
-/// BulletML ‚Ìƒp[ƒTEƒcƒŠ[ by tinyxml
+/// BulletML ï¿½Ìƒpï¿½[ï¿½Tï¿½Eï¿½cï¿½ï¿½ï¿½[ by tinyxml
 /**
- * tinyxml‚É‚æ‚éBulletML‚Ìƒp[ƒT
+ * tinyxmlï¿½É‚ï¿½ï¿½BulletMLï¿½Ìƒpï¿½[ï¿½T
  */
 
 #ifndef BULLETMLPARSER_TINYXML_H_
@@ -9,8 +9,9 @@
 #include <string>
 
 #include "bulletmlcommon.h"
+#include "bulletmlparser.h"
 
-#ifdef PSP
+#ifdef defined(__PSP__) || defined(__PS2__)
 #include "tinyxml.h"
 #else
 #include "tinyxml/tinyxml.h"
